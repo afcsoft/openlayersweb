@@ -4,10 +4,10 @@ const express = require("express");
 const compression = require("compression");
 const pg=require("pg").Pool;
 const f=require("fs");
-const pool=new pg({host:'ec2-54-225-195-3.compute-1.amazonaws.com',
-                       database:'d5chk7n9t49iu5',
-                       user:'ykbmdknkahnjen',
-                       password:'f0d3555952350a1a428baf233e4d10157a6f8e11e7ad58059c832cff5626bbdc',
+const pool=new pg({host:'ec2-54-217-221-21.eu-west-1.compute.amazonaws.com',
+                       database:'d41fi7qtbl8bap',
+                       user:'eklebkmnmvnsjj',
+                       password:'9715c486d74c3560e40422b91baba81b9bdb2dd09de884f204922a4deb840996',
                        port:'5432',ssl:'true'});
 
 var data;
@@ -28,7 +28,7 @@ app.post('*.*', express.static(_app_folder, {maxAge: '1y'}));
 
 app.get("/api/test",function(req,res)
 {
-        pool.query("SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id,name)) As properties FROM trees_test As lg) As f) As fc", (err1, res1) => 
+        pool.query("SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.region_geom)::json As geometry, row_to_json((region_id,responsible)) As properties FROM regions As lg) As f) As fc", (err1, res1) => 
         {
         if(err1) {
                 return console.log(err1);
