@@ -28,9 +28,13 @@ app.post('*.*', express.static(_app_folder, {maxAge: '1y'}));
 
 app.get("/api/test",function(req,res)
 {
-        pool.query("SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id,name)) As properties FROM trees_test As lg) As f) As fc", (err, res1) => 
+        pool.query("SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id,name)) As properties FROM trees_test As lg) As f) As fc", (err1, res1) => 
         {
-        res.send(res1.rows[0].row_to_json)
+        if(err1) {
+                return console.log(err1);
+            }
+            res.send(res1.rows[0].row_to_json)
+        
         f.writeFile("./dist/a.geojson",JSON.stringify(res1.rows[0].row_to_json), function(err) {
 
             if(err) {
@@ -39,6 +43,8 @@ app.get("/api/test",function(req,res)
         
             console.log("The file was saved!");
         }); 
+        
+    
         pool.end()
         })
 }
