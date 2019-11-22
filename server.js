@@ -3,10 +3,10 @@
 const express = require("express");
 const compression = require("compression");
 const pg=require("pg").Pool;
-const pool=new pg({host:'ec2-54-75-245-196.eu-west-1.compute.amazonaws.com',
-                       database:'dbb6hea0bff55c',
-                       user:'iojzljqzitzgvx',
-                       password:'9ed18c7de54481d894345b2841301aae94be9fc58f300c73850cd1fad3ed1845',
+const pool=new pg({host:'ec2-54-225-195-3.compute-1.amazonaws.com',
+                       database:'d5chk7n9t49iu5',
+                       user:'ykbmdknkahnjen',
+                       password:'f0d3555952350a1a428baf233e4d10157a6f8e11e7ad58059c832cff5626bbdc',
                        port:'5432',ssl:'true'});
 
 
@@ -21,7 +21,7 @@ const _app_folder = 'dist/';
 const app = express();
 app.use(compression());
 
-
+app.use(express.static(__dirname + '/' ));
 // ---- SERVE STATIC FILES ---- //
 app.post('*.*', express.static(_app_folder, {maxAge: '1y'}));
 
