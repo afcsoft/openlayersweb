@@ -17,7 +17,7 @@
   },
   "author": "",
   "license": "ISC",
-  "devdependencies": {
+  "dependencies": {
     "@angular-devkit/build-angular": "^0.803.19",
     "@angular/animations": "^4.0.0",
     "@angular/cli": "^8.3.19",
