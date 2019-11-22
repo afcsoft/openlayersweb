@@ -15,7 +15,7 @@ pool.query('SELECT NOW()', (err, res) => {
     pool.end()
   })
 
-const _port = process.env.PORT || 80;;
+const _port = process.env.PORT || 5000;;
 const _app_folder = 'dist/application';
 
 const app = express();
