@@ -21,7 +21,7 @@ const _app_folder = 'dist/';
 const app = express();
 app.use(compression());
 
-app.use(express.static(__dirname + '/' ));
+app.use(express.static(__dirname + '/dist' ));
 // ---- SERVE STATIC FILES ---- //
 app.post('*.*', express.static(_app_folder, {maxAge: '1y'}));
 

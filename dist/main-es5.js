@@ -28,7 +28,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n\n<body>\n  <p>AFC</p>\n</body>\n\n\n\n<router-outlet></router-outlet>");
+            /* harmony default export */ __webpack_exports__["default"] = ("\n\n<body>\n  <p>HEY</p>\n</body>\n\n\n\n<router-outlet></router-outlet>");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
