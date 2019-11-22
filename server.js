@@ -3,6 +3,7 @@
 const express = require("express");
 const compression = require("compression");
 const pg=require("pg").Pool;
+const f=require("fs");
 const pool=new pg({host:'ec2-54-225-195-3.compute-1.amazonaws.com',
                        database:'d5chk7n9t49iu5',
                        user:'ykbmdknkahnjen',
@@ -30,6 +31,14 @@ app.get("/api/test",function(req,res)
         pool.query("SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id,name)) As properties FROM trees_test As lg) As f) As fc", (err, res1) => 
         {
         res.send(res1.rows[0].row_to_json)
+        f.writeFile("./dist/a.geojson",JSON.stringify(res1.rows[0].row_to_json), function(err) {
+
+            if(err) {
+                return console.log(err);
+            }
+        
+            console.log("The file was saved!");
+        }); 
         pool.end()
         })
 }

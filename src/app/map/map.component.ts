@@ -30,6 +30,15 @@ export class MapComponent implements OnInit{
         zoom: 3
       })
     });
+
+    var vector = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: 'a.geojson',
+          format: new ol.format.GeoJSON()
+        })
+      });
+      this.map.addLayer(vector);
+
     this.appStateService.getDim().subscribe(
       x => {
         if(x) {

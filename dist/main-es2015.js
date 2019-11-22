@@ -413,6 +413,13 @@ let MapComponent = class MapComponent {
                 zoom: 3
             })
         });
+        var vector = new openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.layer.Vector({
+            source: new openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.source.Vector({
+                url: './a.geojson',
+                format: new openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.format.GeoJSON()
+            })
+        });
+        this.map.addLayer(vector);
         this.appStateService.getDim().subscribe(x => {
             if (x) {
                 this.map.getLayers().getArray()[0].setOpacity(INITIAL_OPACITY);
