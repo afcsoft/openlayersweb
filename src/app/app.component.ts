@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -13,6 +13,6 @@ export class AppComponent {
     .subscribe((data) => this.displaydata(data));     
  }
  displaydata(data) {this.httpdata = data;}
-
+  name='Open Layers';
   title = 'angulartest';
 }

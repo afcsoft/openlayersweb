@@ -28,7 +28,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n\n<body>\n  <p>{{JSON.stringify(httpdata)}}</p>\n</body>\n\n\n\n<router-outlet></router-outlet>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<h1>{{name}}</h1>\n<map></map>\n<br>\n");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -331,32 +331,6 @@
             }
             /***/ 
         }),
-        /***/ "./src/app/app-routing.module.ts": 
-        /*!***************************************!*\
-          !*** ./src/app/app-routing.module.ts ***!
-          \***************************************/
-        /*! exports provided: AppRoutingModule */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function () { return AppRoutingModule; });
-            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-            var routes = [];
-            var AppRoutingModule = /** @class */ (function () {
-                function AppRoutingModule() {
-                }
-                return AppRoutingModule;
-            }());
-            AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-                    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
-                    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
-                })
-            ], AppRoutingModule);
-            /***/ 
-        }),
         /***/ "./src/app/app.component.css": 
         /*!***********************************!*\
           !*** ./src/app/app.component.css ***!
@@ -383,6 +357,7 @@
             var AppComponent = /** @class */ (function () {
                 function AppComponent(http) {
                     this.http = http;
+                    this.name = 'Open Layers';
                     this.title = 'angulartest';
                 }
                 AppComponent.prototype.ngOnInit = function () {
@@ -398,7 +373,7 @@
             ]; };
             AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-                    selector: 'app-root',
+                    selector: 'my-app',
                     template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
                     styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")).default]
                 })
@@ -415,29 +390,124 @@
             __webpack_require__.r(__webpack_exports__);
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function () { return AppModule; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
-            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+            /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm2015/http.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var _map_map_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./map/map.component */ "./src/app/map/map.component.ts");
+            /* harmony import */ var _state_appstate_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./state/appstate.service */ "./src/app/state/appstate.service.ts");
             var AppModule = /** @class */ (function () {
                 function AppModule() {
                 }
                 return AppModule;
             }());
             AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-                    declarations: [
-                        _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]
-                    ],
-                    imports: [
-                        _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-                        _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"]
-                    ],
-                    providers: [],
-                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+                    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_http__WEBPACK_IMPORTED_MODULE_5__["HttpModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]],
+                    providers: [_state_appstate_service__WEBPACK_IMPORTED_MODULE_8__["AppStateService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]],
+                    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _map_map_component__WEBPACK_IMPORTED_MODULE_7__["MapComponent"]],
+                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
                 })
             ], AppModule);
+            /***/ 
+        }),
+        /***/ "./src/app/map/map.component.css": 
+        /*!***************************************!*\
+          !*** ./src/app/map/map.component.css ***!
+          \***************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("@import url(https://openlayers.org/en/v4.6.5/css/ol.css);\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL21hcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHdEQUF3RCIsImZpbGUiOiJzcmMvYXBwL21hcC9tYXAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgdXJsKGh0dHBzOi8vb3BlbmxheWVycy5vcmcvZW4vdjQuNi41L2Nzcy9vbC5jc3MpOyJdfQ== */");
+            /***/ 
+        }),
+        /***/ "./src/app/map/map.component.ts": 
+        /*!**************************************!*\
+          !*** ./src/app/map/map.component.ts ***!
+          \**************************************/
+        /*! exports provided: MapComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapComponent", function () { return MapComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var openlayers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! openlayers */ "./node_modules/openlayers/dist/ol.js");
+            /* harmony import */ var openlayers__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/ __webpack_require__.n(openlayers__WEBPACK_IMPORTED_MODULE_2__);
+            /* harmony import */ var _state_appstate_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state/appstate.service */ "./src/app/state/appstate.service.ts");
+            var INITIAL_OPACITY = 1;
+            var DIMMED_OPACITY = 0.3;
+            var MapComponent = /** @class */ (function () {
+                function MapComponent(appStateService) {
+                    this.appStateService = appStateService;
+                }
+                MapComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this.map = new openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.Map({
+                        layers: [
+                            new openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.layer.Tile({ source: new openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.source.OSM(), opacity: INITIAL_OPACITY }),
+                        ],
+                        target: document.getElementById('map'),
+                        view: new openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.View({
+                            center: openlayers__WEBPACK_IMPORTED_MODULE_2___default.a.proj.transform([-0.12755, 51.507222], 'EPSG:4326', 'EPSG:3857'),
+                            zoom: 3
+                        })
+                    });
+                    this.appStateService.getDim().subscribe(function (x) {
+                        if (x) {
+                            _this.map.getLayers().getArray()[0].setOpacity(INITIAL_OPACITY);
+                        }
+                        else {
+                            _this.map.getLayers().getArray()[0].setOpacity(DIMMED_OPACITY);
+                        }
+                    });
+                };
+                return MapComponent;
+            }());
+            MapComponent.ctorParameters = function () { return [
+                { type: _state_appstate_service__WEBPACK_IMPORTED_MODULE_3__["AppStateService"] }
+            ]; };
+            MapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'map',
+                    template: "<div id=\"map\"></div>",
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./map.component.css */ "./src/app/map/map.component.css")).default]
+                })
+            ], MapComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/state/appstate.service.ts": 
+        /*!*******************************************!*\
+          !*** ./src/app/state/appstate.service.ts ***!
+          \*******************************************/
+        /*! exports provided: AppStateService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppStateService", function () { return AppStateService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var rxjs_Subject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/Subject */ "./node_modules/rxjs-compat/_esm2015/Subject.js");
+            /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+            var AppStateService = /** @class */ (function () {
+                function AppStateService() {
+                    this.trigger = new rxjs_Subject__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+                    this.state = this.trigger.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["scan"])(function (current) { return !current; }, true));
+                }
+                AppStateService.prototype.toggleDim = function () {
+                    this.trigger.next();
+                };
+                AppStateService.prototype.getDim = function () {
+                    return this.state.asObservable();
+                };
+                return AppStateService;
+            }());
+            AppStateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+            ], AppStateService);
             /***/ 
         }),
         /***/ "./src/environments/environment.ts": 
